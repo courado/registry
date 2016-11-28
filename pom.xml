@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>eu.openminted</groupId>
+  <artifactId>registry-parent</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+  <name>Registry parent pom</name>
+  <description>Parent pom for all OpenMinTeD projects</description>
+  <url>https://github.com/openminted/</url>
+  <developers>
+    <developer>
+      <name>Stefanos Gatsios</name>
+      <email>stevengatsios@gmail.com</email>
+    </developer>
+  </developers>
+  <scm>
+    <connection>scm:git:git@github.com:courado/registry-parent.git</connection>
+    <developerConnection>scm:git:git@github.com:courado/registry-parent.git</developerConnection>
+    <url>http://github.com/courado/registry-parent</url>
+    <tag>HEAD</tag>
+  </scm>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <spring.version>4.2.1.RELEASE</spring.version>
+    <hibernate.version>5.1.0.Final</hibernate.version>
+    <joda-time.version>2.3</joda-time.version>
+    <jaxb2_commons.version>0.8.2</jaxb2_commons.version>
+  </properties>
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-enforcer-plugin</artifactId>
+          <version>1.4.1</version>
+          <executions>
+            <execution>
+              <id>enforce-java</id>
+              <phase>validate</phase>
+              <goals>
+                <goal>enforce</goal>
+              </goals>
+              <configuration>
+                <rules>
+                  <requireJavaVersion>
+                    <version>[1.8,)</version>
+                    <message>[ERROR] The currently supported version of Java is 1.8 or higher</message>
+                  </requireJavaVersion>
+                  <requireMavenVersion>
+                    <version>[3.0,)</version>
+                    <message>[ERROR] The currently supported version of Maven is 3.0 or higher</message>
+                  </requireMavenVersion>
+                </rules>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+</project>
